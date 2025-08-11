@@ -14,13 +14,13 @@ CREATE TABLE `users` (
     UNIQUE KEY `email` (`email`)
 );
 
-DROP TABLE IF EXISTS plants;
+DROP TABLE IF EXISTS `plants`;
 
-CREATE TABLE IF NOT EXISTS plants (
+CREATE TABLE IF NOT EXISTS `plants` (
     `id` INT NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(200) NOT NULL,
     `category` VARCHAR(100) NOT NULL,
-    `family` VARHCAR(100)NOT NULL,
+    `family` VARCHAR(100)NOT NULL,
     PRIMARY KEY (`id`)
 );
 
