@@ -14,12 +14,23 @@ CREATE TABLE `users` (
     UNIQUE KEY `email` (`email`)
 );
 
+DROP TABLE IF EXISTS plants;
+
+CREATE TABLE IF NOT EXISTS plants (
+    `id` INT NOT NULL AUTO_INCREMENT,
+    `name` VARCHAR(200) NOT NULL,
+    `category` VARCHAR(100) NOT NULL,
+    `family` VARHCAR(100)NOT NULL,
+    PRIMARY KEY (`id`)
+);
+
+
 INSERT INTO
     `users` (`name`, `email`, `password`)
 VALUES (
         'adrian',
         'adrian@gmail.com',
-        SHA2('h3ll0.', 512)
+        'h3ll0.'
     );
 
 INSERT INTO
@@ -27,5 +38,5 @@ INSERT INTO
 VALUES (
         'ana',
         'ana@gmail.com',
-        SHA2('h3ll0.', 512)
+        'h3ll0.'
     );
