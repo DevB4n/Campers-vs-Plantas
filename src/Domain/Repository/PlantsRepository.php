@@ -9,5 +9,4 @@ interface PlantsRepository {
     
     public function getAllByCategory(string $category):array;
 
-    //public function GetByCategory(string $category):Array;
 }
