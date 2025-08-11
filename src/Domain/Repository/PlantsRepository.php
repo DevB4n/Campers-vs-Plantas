@@ -7,5 +7,5 @@ interface PlantsRepository {
 
     public function GetAll():array;
 
-    public function GetByCategory(string $category):Array;
+    //public function GetByCategory(string $category):Array;
 }
