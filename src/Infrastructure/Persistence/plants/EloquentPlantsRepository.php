@@ -47,4 +47,33 @@ class EloquentPlantsRepository implements PlantsRepository{
             ])->toArray();
         });
     }
-}
+
+    
+    public function getAllByCategory(string $category): array
+    {
+        $plants = Plant::with(['name','category','family'])->get();
+
+        $result = [];
+
+        foreach ($plants as $plant) {
+            $category = $plant->category ?? null;
+
+            $value = match ($category) {
+
+                // 🟤 GRANO
+                'name' => $plant->name ?? null,
+                'category' => $plant->category ?? null,
+                'family' => $plant->family ?? null,
+                default => null};
+            };
+
+            if ($value !== null && $category !== null) {
+                $result[] = [
+                    'category' => $category,
+                    $category => $value,
+                ];
+            }
+            return $result;
+        }
+    }
+
